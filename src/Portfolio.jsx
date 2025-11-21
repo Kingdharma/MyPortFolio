@@ -31,6 +31,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import dharmaImage from "@/assets/Dharma.png";
 
 /**
  * Dharmaraja — Premium Creative Developer Portfolio
@@ -773,8 +774,8 @@ export default function Portfolio() {
               />
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-6">
                 <motion.img
-              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1400&auto=format&fit=crop"
-              alt="Dharmaraja portrait placeholder"
+                  src={dharmaImage}
+                  alt="Dharmaraja"
                   className="h-full w-full object-cover"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
