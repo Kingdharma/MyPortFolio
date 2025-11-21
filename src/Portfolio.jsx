@@ -1,5 +1,5 @@
-import React, { useMemo, useState, useEffect, useRef } from "react";
-import { motion, useScroll, useSpring, useMotionValue, useTransform, AnimatePresence } from "framer-motion";
+import { useMemo, useState, useEffect, useRef } from "react";
+import { motion, useScroll, useSpring, useMotionValue, useTransform } from "framer-motion";
 import {
   ArrowRight,
   Github,
@@ -42,8 +42,6 @@ import dharmaImage from "@/assets/Dharma.png";
 // ====== Enhanced Theming ======
 const bgDark = "bg-[#0A0E1A]"; // deeper, richer dark background
 const textMuted = "text-zinc-400";
-const glass =
-  "backdrop-blur-xl bg-white/[0.08] border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]";
 const glassStrong =
   "backdrop-blur-2xl bg-white/[0.12] border border-white/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]";
 const ringGrad =
@@ -548,7 +546,7 @@ const Testimonial = ({ t }) => {
       >
         <Quote className="mb-4 opacity-60 text-emerald-400" size={32} />
       </motion.div>
-      <p className="text-white/90 text-lg leading-relaxed relative z-10">"{t.quote}"</p>
+      <p className="text-white/90 text-lg leading-relaxed relative z-10">&ldquo;{t.quote}&rdquo;</p>
       <div className="mt-6 flex items-center justify-between relative z-10">
         <span className="text-sm font-medium text-white/70">{t.from}</span>
         <motion.span
@@ -673,7 +671,7 @@ export default function Portfolio() {
               >
                 👋
               </motion.span>
-              <span className="text-white">Hi, I'm </span>
+              <span className="text-white">Hi, I&apos;m </span>
               <br />
               <span className={textGradient}>Dharmaraja</span>
               <br />
@@ -951,7 +949,7 @@ export default function Portfolio() {
               },
             }}
           >
-            {PROJECTS.map((p, i) => (
+            {PROJECTS.map((p) => (
               <motion.div
                 key={p.title}
                 variants={{
@@ -1199,7 +1197,7 @@ export default function Portfolio() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            {["Home", "Projects", "Contact"].map((link, i) => (
+            {["Home", "Projects", "Contact"].map((link) => (
               <motion.a
                 key={link}
                 href={`#${link.toLowerCase()}`}
